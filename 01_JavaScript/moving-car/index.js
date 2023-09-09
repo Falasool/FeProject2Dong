@@ -1,10 +1,15 @@
+// 问题：
+// 1. 看起来好乱啊！！
+// 2. 页面刷新后车辆img和速度保持了，但是selected变回了value=1的值
+// 3. sessionStorage 保存坐标不生效
+
 // *************************** //
 // ******** General ********** //
 // *************************** //
 
-const vehicle = document.getElementById('vehicle')
-const type = document.getElementById('type-group')
-const speed = document.getElementById('speed-group')
+const vehicle = document.querySelector('#vehicle')
+const type = document.querySelector('#type-group')
+const speed = document.querySelector('#speed-group')
 
 let carTop = 2
 let carLeft = 4
@@ -50,9 +55,7 @@ function moveCar(event) {
     default:
       break
   }
-  // 储存车辆位置
-  sessionStorage.setItem('selectedTop', carTop.toString())
-  sessionStorage.setItem('selectedLeft', carLeft.toString())
+  saveToStorage()
 }
 
 // 监听：window 范围内触发keydown事件时执行 moveCar()
@@ -65,11 +68,11 @@ window.addEventListener('keydown', moveCar)
 function toggleType(event) {
   // console.log(event.target.value)
   // console.log(vehicle.src)
+  type.value = event.target.value
   vehicle.src = `./img/car${event.target.value}.png`
-  // 储存车辆类型
-  sessionStorage.setItem('selectedType', vehicle.src)
 
   type?.blur()
+  saveToStorage()
 }
 type?.addEventListener('change', toggleType)
 
@@ -80,10 +83,8 @@ type?.addEventListener('change', toggleType)
 function toggleSpeed(event) {
   // console.log(event.target.value)
   speedValue = event.target.value * 0.2
-  // 储存速度
-  sessionStorage.setItem('selectedSpeed', speedValue)
-
   speed?.blur()
+  saveToStorage()
 }
 
 speed?.addEventListener('change', toggleSpeed)
@@ -98,7 +99,6 @@ window.addEventListener('load', function () {
 
   if (storedType) {
     vehicle.src = storedType
-    type.option[storedType].classList.add('selected')
   }
   if (storedSpeed) {
     speedValue = parseFloat(storedSpeed)
@@ -111,3 +111,20 @@ window.addEventListener('load', function () {
     carLeft = parseFloat(storedLeft)
   }
 })
+
+function saveToStorage() {
+  // 储存车辆位置
+  const curTop = sessionStorage.setItem('selectedTop', JSON.stringify(carTop))
+  const curLeft = sessionStorage.setItem(
+    'selectedLeft',
+    JSON.stringify(carLeft)
+  )
+  const curSpeed = sessionStorage.setItem(
+    'selectedSpeed',
+    JSON.stringify(speedValue)
+  )
+  const curType = sessionStorage.setItem(
+    'selectedType',
+    JSON.stringify(vehicle.src)
+  )
+}
