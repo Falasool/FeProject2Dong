@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.img-wrap:hover {
+  transform: rotate(45deg);
+  transition: all 0.3s;
+}
+.row {
+  display: flex;
+  padding: 1rem 0;
+}
+.header {
+  width: 35%;
+  text-align: right;
+  padding: 1rem 0;
+}
+.detail {
+  padding: 1rem 0;
+  display: flex;
+}
+.detail *{
+  margin-right: ;
+}

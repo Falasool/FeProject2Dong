@@ -69,7 +69,7 @@ function toggleType(event) {
   // console.log(event.target.value)
   // console.log(vehicle.src)
   type.value = event.target.value
-  vehicle.src = `./img/car${event.target.value}.png`
+  vehicle.src = `https://cdn.jsdelivr.net/gh/Falasool/blog-pic-bed@main//blogmovingcar${event.target.value}.png`
 
   type?.blur()
   saveToStorage()

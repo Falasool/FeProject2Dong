@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrderMenu</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="gallery p-8 flex gap-12 bg-gray-500 box-border">
+      <div class="img-wrap overflow-hidden rounded-2xl">
+        <img
+          src="https://erdong-fe.github.io/FeProject2Dong/01.JavaScript/02.OrderMilkTea/images/mt1.jpg"
+          alt=""
+          class=""
+        />
+      </div>
+      <div class="img-wrap overflow-hidden rounded-2xl">
+        <img
+          src="https://erdong-fe.github.io/FeProject2Dong/01.JavaScript/02.OrderMilkTea/images/mt2.jpg"
+          alt=""
+        />
+      </div>
+      <div class="img-wrap overflow-hidden rounded-2xl">
+        <img
+          src="https://erdong-fe.github.io/FeProject2Dong/01.JavaScript/02.OrderMilkTea/images/mt3.jpg"
+          alt=""
+        />
+      </div>
+      <div class="img-wrap overflow-hidden rounded-2xl">
+        <img
+          src="https://erdong-fe.github.io/FeProject2Dong/01.JavaScript/02.OrderMilkTea/images/mt4.jpg"
+          alt=""
+        />
+      </div>
+    </section>
+    <div class="menu">
+      <div class="row">
+        <div class="header">奶茶口味：</div>
+        <div class="detail">
+          <input type="checkbox" />芋泥啵啵 <input type="checkbox" />芝芝桃桃
+          <input type="checkbox" />多肉葡萄
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">几杯：</div>
+        <div class="detail">
+          <input type="text" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">杯型：</div>
+        <div class="detail">
+          <input type="checkbox" />超大杯 <input type="checkbox" />大杯
+          <input type="checkbox" />中杯
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">甜度：</div>
+        <div class="detail">
+          <select name="" id="">
+            <option value="1">全糖</option>
+            <option value="2">五分糖</option>
+            <option value="3">三分糖</option>
+            <option value="4">无糖</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">免费小料：</div>
+        <div class="detail">
+          <input type="checkbox" />波霸 <input type="checkbox" />椰果
+          <input type="checkbox" />西米露 <input type="checkbox" />茶冻
+          <input type="checkbox" />红豆 <input type="checkbox" />仙草
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">加价小料：</div>
+        <div class="detail">
+          <input type="checkbox" />冰淇淋（¥4）
+          <input type="checkbox" />布丁（¥3）
+          <input type="checkbox" />奶盖（¥2）
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">是否加冰：</div>
+        <div class="detail">
+          <input type="checkbox" />是 <input type="checkbox" />否
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">是否去茶底：</div>
+        <div class="detail">
+          <input type="checkbox" />是 <input type="checkbox" />否
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">你的地址：</div>
+        <div class="detail">
+          <textarea required name="" id="" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">你的手机号:</div>
+        <div class="detail"><input required type="text" name="" id="" /></div>
+      </div>
+      <div class="row">
+        <div class="header">期待送达时间:</div>
+        <div class="detail">
+          <input required type="text" name="" id="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">备注：</div>
+        <div class="detail"><input type="text" name="" id="" /></div>
+      </div>
+      <div class="row">
+        <div class="header">支付方式：</div>
+        <div class="detail">
+          <input type="checkbox" /> 微信 <input type="checkbox" />支付宝
+        </div>
+      </div>
+      <div class="">
+        <button class="submit">提交</button
+        ><button class="restart">重置</button>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</html>
